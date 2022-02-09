@@ -22,11 +22,11 @@ void clearSDfiles() {
 
 
 void initSDcard() {
-  spiSD.begin(18, 19, 23, SD_CS_pin); //SCK,MISO,MOSI,SS 
+  spiSD.begin(18, 19, 23, SD_CS_pin); //SCK,MISO,MOSI,SS
   while (!SD.begin( SD_CS_pin, spiSD ))
   {
     Serial.println("Card Mount Failed");
-     digitalWrite(RED_pin, HIGH);
+    digitalWrite(RED_pin, HIGH);
     delay(1000);
   }
 
@@ -35,8 +35,8 @@ void initSDcard() {
 
   if (cardType == CARD_NONE) {
     Serial.println("No SD card attached");
-    while(1){
-    digitalWrite(RED_pin, HIGH);
+    while (1) {
+      digitalWrite(RED_pin, HIGH);
     }
   }
   Serial.print("SD Card Type: ");
@@ -54,5 +54,4 @@ void initSDcard() {
   Serial.printf("SD Card Size: %lluMB\n", cardSize);
 
   clearSDfiles();
-
 }

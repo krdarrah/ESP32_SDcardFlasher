@@ -53,19 +53,3 @@ void copyfromSPIFSS(fs::FS &fs, const char * dirname, uint8_t levels) {
     file = root.openNextFile();
   }
 }
-
-//  void readFile(fs::FS & fs, const char * path) {
-//    Serial.printf("Reading file: %s\r\n", path);
-//
-//    File file = fs.open(path);
-//    if (!file || file.isDirectory()) {
-//      Serial.println("- failed to open file for reading");
-//      return;
-//    }
-//
-//    Serial.println("- read from file:");
-//    while (file.available()) {
-//      Serial.write(file.read());
-//    }
-//    file.close();
-//  }
